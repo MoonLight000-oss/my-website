@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заказ шаурмы</title>
+    <link rel="stylesheet" href="order.css?v=20261030-1">
+    <link rel="stylesheet" href="../menu-carousel.css?v=20261030-2">
+</head>
+<body id="top">
+
+<header class="order-header">
+    <a class="back-link" href="../Shaurma.html#top">На главную</a>
+
+    <nav class="order-navigation" aria-label="Навигация">
+        <a href="../Shaurma.html#top">Главная</a>
+        <a href="#order-menu">Меню</a>
+        <a href="#cart">Мои заказы</a>
+        <a href="../Shaurma.html#promotions">Акции</a>
+        <a href="#help">Помощь</a>
+    </nav>
+
+    <div class="order-brand">
+        <img src="img_Order/Icone.png" alt="Логотип">
+        <div>
+            <h1>Оформление заказа</h1>
+            <p>Выберите позиции и добавьте их в корзину.</p>
+        </div>
+    </div>
+
+    <!-- Замените ссылку на адрес своего бота. -->
+    <a class="bot-button" href="https://t.me/your_bot" target="_blank" rel="noopener">Бот заказа</a>
+</header>
+
+<main class="order-layout">
+    <section class="order-menu" id="order-menu">
+        <h2>Меню</h2>
+        <div class="product-categories" id="product-grid"></div>
+        <noscript><p>Включите JavaScript, чтобы посмотреть меню и оформить заказ.</p></noscript>
+    </section>
+
+    <aside class="cart" id="cart">
+        <h2>Корзина</h2>
+        <div class="cart-list" id="cart-list">
+            <p class="empty-cart">Корзина пока пустая.</p>
+        </div>
+
+        <div class="cart-total">
+            <span>Итого:</span>
+            <strong id="cart-total">0 ₽</strong>
+        </div>
+
+        <button class="checkout-button" id="checkout-button" type="button">Оформить заказ</button>
+        <p class="checkout-feedback" id="checkout-feedback" role="status"></p>
+
+        <section class="order-status" id="order-status" hidden aria-live="polite">
+            <div class="order-status-heading">
+                <p>Демозаказ</p>
+                <span id="order-number">#0000</span>
+            </div>
+
+            <p class="order-demo-note">Сервера нет: статусы меняются только в этом браузере. Последний демозаказ хранится до перезагрузки страницы и заменяется при новом оформлении.</p>
+            <p class="order-status-label" id="order-status-label"></p>
+
+            <ol class="status-steps" id="status-steps">
+                <li data-status-index="0">Принят</li>
+                <li data-status-index="1">Готовим</li>
+                <li data-status-index="2">Готов к выдаче</li>
+            </ol>
+
+            <p class="status-message" id="status-message"></p>
+
+            <label class="status-interval-control" for="status-interval-minutes">
+                Демо: менять статус каждые
+                <input id="status-interval-minutes" type="number" min="1" max="120" value="5">
+                мин.
+            </label>
+
+            <section class="pickup-card" id="pickup-card" hidden aria-labelledby="pickup-title">
+                <h3 id="pickup-title">QR-код готового демозаказа</h3>
+                <p class="pickup-demo-note">Демонстрационный код не даёт права на получение. Проверка сотрудником и подтверждение выдачи требуют сервера.</p>
+                <img class="pickup-qr-image" id="pickup-qr-image" alt="QR-код демозаказа" hidden>
+                <p class="pickup-error" id="pickup-error" role="alert"></p>
+                <button class="pickup-download" id="download-pickup-qr" type="button" disabled>Скачать QR-код</button>
+                <p class="pickup-instruction">В рабочей системе: покажите код сотруднику при получении.</p>
+            </section>
+
+            <button class="demo-cancel-button" id="cancel-demo-order" type="button">Отменить демозаказ</button>
+        </section>
+    </aside>
+</main>
+
+<div class="payment-modal" id="payment-modal" aria-hidden="true">
+    <div class="payment-dialog" role="dialog" aria-modal="true" aria-labelledby="payment-title">
+        <button class="payment-close" id="payment-close" type="button" aria-label="Закрыть окно оплаты">x</button>
+        <p class="payment-kicker">Демо-оплата</p>
+        <h2 id="payment-title">Оплата заказа</h2>
+
+        <div class="payment-summary">
+            <span>К оплате</span>
+            <strong id="payment-total">0 ₽</strong>
+        </div>
+
+        <form class="payment-form" id="payment-form" novalidate>
+            <fieldset class="payment-methods">
+                <legend>Способ оплаты</legend>
+                <label class="payment-method">
+                    <input type="radio" name="payment-method" value="card" checked>
+                    <span>Картой</span>
+                </label>
+                <label class="payment-method">
+                    <input type="radio" name="payment-method" value="sbp">
+                    <span>СБП</span>
+                </label>
+            </fieldset>
+
+            <div class="card-payment-fields" id="card-payment-fields">
+                <label class="payment-field" for="payment-card-number">
+                    Номер карты
+                    <input id="payment-card-number" inputmode="numeric" autocomplete="cc-number" placeholder="0000 0000 0000 0000" required>
+                </label>
+
+                <div class="payment-fields-row">
+                    <label class="payment-field" for="payment-card-date">
+                        Срок действия
+                        <input id="payment-card-date" inputmode="numeric" autocomplete="cc-exp" placeholder="ММ/ГГ" required>
+                    </label>
+                    <label class="payment-field" for="payment-card-code">
+                        Код
+                        <input id="payment-card-code" inputmode="numeric" autocomplete="cc-csc" placeholder="000" required>
+                    </label>
+                </div>
+            </div>
+
+            <p class="payment-error" id="payment-error" role="alert"></p>
+            <p class="payment-note">Это демонстрационное окно: данные никуда не отправляются.</p>
+            <button class="payment-submit" id="payment-submit" type="submit">Оплатить</button>
+        </form>
+    </div>
+</div>
+
+<footer class="footer" id="help">
+    <div class="footer-top">
+        <div class="footer-logo">
+            <img src="img_Order/Icone.png" alt="Логотип">
+        </div>
+
+        <div class="footer-column">
+            <h3>Навигация</h3>
+            <a href="../Shaurma.html#top">Главная</a>
+            <a href="#order-menu">Меню</a>
+            <a href="#cart">Мои заказы</a>
+            <a href="../Shaurma.html#promotions">Акции</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>О нас</h3>
+            <p>Шаурма ДГТУ и Точка</p>
+            <p>Готовим быстро, вкусно и без лишних очередей.</p>
+        </div>
+
+        <div class="footer-column">
+            <h3>Помощь</h3>
+            <a href="#order-menu">Как заказать</a>
+            <a href="#cart">Получение заказа</a>
+            <a href="#help">Остались вопросы по заказу</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Телефоны</h3>
+            <a href="tel:+79667666357">+7-966-766-63-57 - Менеджер</a>
+            <a href="tel:+79996322335">+7-999-632-23-35 - Директор</a>
+            <a href="tel:+79081979609">+7-908-197-96-09 - Владелец</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026</p>
+        <p>Внешний вид готовых блюд может немного отличаться от представленных в меню изображений*</p>
+    </div>
+</footer>
+
+<script src="../menu-data.js?v=20261029-4"></script>
+<script src="../menu-carousel.js?v=20261029-6"></script>
+<script src="vendor/qrcodegen.js"></script>
+<script src="order.js?v=20261030-1"></script>
+</body>
+</html>
