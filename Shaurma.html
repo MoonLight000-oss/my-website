@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шаурма ДГТУ и Точка</title>
+    <link rel="stylesheet" href="Shaurma.css?v=20261029-6">
+    <link rel="stylesheet" href="menu-carousel.css?v=20261030-2">
+</head>
+<body id="top">
+
+<header class="header">
+
+    <div class="logo">
+        <img src="img/Icone.png" alt="Логотип">
+    </div>
+
+    <div class="site-title">
+        <h1>Шаурма ДГТУ и Точка</h1>
+        <p>Быстро. Вкусно. Без очередей.</p>
+    </div>
+
+    <nav class="navigation">
+        <a href="#top">Главная</a>
+        <a href="#menu">Меню</a>
+        <a href="Order/order.html#cart">Мои заказы</a>
+        <a href="#promotions">Акции</a>
+        <a href="#help">Помощь</a>
+    </nav>
+
+    <div class="order-button">
+        <a href="#" id="open-register">Заказать</a>
+    </div>
+
+    <!-- Замените ссылку на адрес своего бота. -->
+    <a class="bot-button" href="https://t.me/your_bot" target="_blank" rel="noopener">
+        Бот заказа
+    </a>
+
+</header>
+
+<div class="page-content">
+    <aside class="sidebar">
+        <div class="review-block">
+
+            <div class="review-photos">
+                <img src="img/Zemfira.png"
+                     alt="Фото"
+                     class="review-photo review-photo-left">
+                <img src="img/Meshi.png"
+                     alt="Фото"
+                     class="review-photo review-photo-center">
+                <img src="img/Tsoi.png"
+                     alt="Фото"
+                     class="review-photo review-photo-right">
+            </div>
+
+            <p class="review-text">
+                Даже им понравилось в «Шаурма ДГТУ и Точка»
+            </p>
+        </div>
+
+        <section class="services-section" aria-labelledby="services-title">
+            <h2 class="sidebar-section-title" id="services-title">Наши услуги</h2>
+
+            <p class="sidebar-note">В бизнес-проекте эти сервисы запланированы. Их запуск пока не подтверждён.</p>
+            <div class="services-carousel" id="services-carousel">
+                <button class="service-item" type="button" data-slot="0" data-title="Предзаказ к нужному времени" data-description="В бизнес-проекте предусмотрен заказ заранее через VK-бота: повар видит очередь предзаказов и готовит к нужному времени. Предзаказ позволяет получить еду без очереди. Покупка на месте без предзаказа также сохраняется." aria-label="Предзаказ к нужному времени">
+                    <span class="service-thumb"><img src="img/offers/preorder.svg" alt="" width="96" height="96"><span class="offer-label">Предзаказ</span></span>
+                </button>
+                <button class="service-item" type="button" data-slot="1" data-title="Заказ через VK-бота" data-description="Планируется выбор позиций и безналичная оплата в VK-боте с уведомлением о готовности и QR-кодом для получения. Адрес VK-бота в документе не указан." aria-label="Заказ через VK-бота">
+                    <span class="service-thumb"><img src="img/offers/bot.svg" alt="" width="96" height="96"><span class="offer-label">VK-бот</span></span>
+                </button>
+                <button class="service-item" type="button" data-slot="2" data-title="Статус заказа в реальном времени" data-description="Планируются статусы заказа в VK-боте: «Принят» → «Готовится» → «Готов». После завершения приготовления бот формирует QR-код для получения заказа." aria-label="Статус заказа в реальном времени">
+                    <span class="service-thumb"><img src="img/offers/status.svg" alt="" width="96" height="96"><span class="offer-label">Статус заказа</span></span>
+                </button>
+                <button class="service-item" type="button" data-slot="3" data-title="Получение заказа по QR-коду" data-description="Планируется выдача без очереди из индивидуального бокса, который открывается QR-кодом. В VK-боте код формируется после приготовления; для заказа на сайте в документе указано мгновенное получение QR-кода." aria-label="Получение заказа по QR-коду">
+                    <span class="service-thumb"><img src="img/offers/pickup.svg" alt="" width="96" height="96"><span class="offer-label">Выдача по QR</span></span>
+                </button>
+                <button class="service-item" type="button" data-slot="4" data-title="Покупка на месте" data-description="В бизнес-проекте сохраняется возможность покупки на точке без предзаказа. Указанное время ожидания — 5–15 минут." aria-label="Покупка на месте">
+                    <span class="service-thumb"><img src="img/offers/counter.svg" alt="" width="96" height="96"><span class="offer-label">На месте</span></span>
+                </button>
+            </div>
+
+        </section>
+
+        <section class="promotions-section" id="promotions" aria-labelledby="promotions-title">
+            <h2 class="sidebar-section-title" id="promotions-title">Главные акции</h2>
+
+            <p class="sidebar-note">Предложения из бизнес-проекта. Запуск и актуальность не подтверждены; планируемые акции и неуточнённые условия отмечены в описаниях. Нажмите на предложение, чтобы прочитать условия.</p>
+            <div class="promotion-flower" id="promotion-flower">
+                <button class="promo-petal promo-petal-1" type="button" data-title="Стандартная шаурма + вода" data-description="По бизнес-проекту: комбо «стандартная шаурма + вода» — 249 ₽ вместо 268 ₽. Срок действия не указан." aria-label="Стандартная шаурма + вода">
+                    <span class="promo-thumb"><img src="img/offers/combo.svg" alt="" width="96" height="96"><span class="offer-label">Комбо<br>249 ₽</span></span>
+                </button>
+                <button class="promo-petal promo-petal-2" type="button" data-title="Вдвоём" data-description="По бизнес-проекту: две стандартные шаурмы за 399 ₽. Срок действия не указан." aria-label="Вдвоём">
+                    <span class="promo-thumb"><img src="img/offers/duo.svg" alt="" width="96" height="96"><span class="offer-label">Вдвоём<br>399 ₽</span></span>
+                </button>
+                <button class="promo-petal promo-petal-3" type="button" data-title="Студенческая скидка" data-description="По бизнес-проекту: скидка 10 ₽ на стандартную шаурму в спокойные часы, с 15:00 до 17:00. Способ подтверждения статуса студента и срок действия не указаны." aria-label="Студенческая скидка">
+                    <span class="promo-thumb"><img src="img/offers/student.svg" alt="" width="96" height="96"><span class="offer-label">Студентам<br>−10 ₽</span></span>
+                </button>
+                <button class="promo-petal promo-petal-4" type="button" data-title="Собери пять" data-description="Планируется постоянная программа на точке: соберите пять наклеек и получите одну стандартную шаурму бесплатно после проверки карты сотрудником. За какую покупку дают наклейку, срок карты и совместимость с другими акциями не определены." aria-label="Собери пять">
+                    <span class="promo-thumb"><img src="img/offers/loyalty.svg" alt="" width="96" height="96"><span class="offer-label">Собери<br>пять</span></span>
+                </button>
+                <button class="promo-petal promo-petal-5" type="button" data-title="Лимитированное тематическое комбо" data-description="Планируются тематические наборы с игрушкой и напитком для студентов и сотрудников: 14 февраля, май и конец года, октябрь / Хэллоуин, декабрь / Новый год. Для Хэллоуина указаны новый цвет, соус и тыквенный напиток. Цена, скидка, тираж и состав требуют уточнения; точные даты запуска не заданы." aria-label="Лимитированное тематическое комбо">
+                    <span class="promo-thumb"><img src="img/offers/seasonal.svg" alt="" width="96" height="96"><span class="offer-label">Комбо<br>сезона</span></span>
+                </button>
+                <button class="promo-petal promo-petal-6" type="button" data-title="Крути и выигрывай" data-description="Планируется на точке в октябре: вращение колеса после покупки примерно от 300 ₽. Порог требует подтверждения. В записи названы «мини-плюшки», соус или картошка; значение «мини-плюшки» не уточнено. Вероятности, число вращений и призовой фонд не заданы." aria-label="Крути и выигрывай">
+                    <span class="promo-thumb"><img src="img/offers/wheel.svg" alt="" width="96" height="96"><span class="offer-label">Крути<br>колесо</span></span>
+                </button>
+                <button class="promo-petal promo-petal-7" type="button" data-title="Острый шаурма-челлендж" data-description="Планируется на точке: съешьте острую шаурму за две минуты — порция бесплатно, достижение на доске почёта. Апрель — предварительный месяц. Размер порции, порядок оплаты при неуспехе и число попыток не определены." aria-label="Острый шаурма-челлендж">
+                    <span class="promo-thumb"><img src="img/offers/spicy.svg" alt="" width="96" height="96"><span class="offer-label">Острый<br>вызов</span></span>
+                </button>
+                <button class="promo-petal promo-petal-8" type="button" data-title="Конкурс мемов про ДГТУ" data-description="Планируется в марте, весь конкурс длится три дня: приём мемов, отбор десяти финалистов, голосование и итоги. Приём и голосование планируются в VK. Приз — «аквапарк»; вид приза и число победителей неизвестны, критерии отбора ещё не утверждены." aria-label="Конкурс мемов про ДГТУ">
+                    <span class="promo-thumb"><img src="img/offers/memes.svg" alt="" width="96" height="96"><span class="offer-label">Мемы<br>ДГТУ</span></span>
+                </button>
+                <button class="promo-petal promo-petal-9" type="button" data-title="Придумай название" data-description="Планируется голосование по бюллетеням за пять вариантов названия, составленных командой. Сентябрь — предварительный месяц. Что именуется, где принимаются бюллетени и предусмотрен ли приз, не уточнено." aria-label="Придумай название">
+                    <span class="promo-thumb"><img src="img/offers/name.svg" alt="" width="96" height="96"><span class="offer-label">Выбор<br>названия</span></span>
+                </button>
+                <button class="promo-petal promo-petal-10" type="button" data-title="Выбираем вместе и новинки сезона" data-description="Планируется голосование в VK за три сезонных варианта с выбором позиции для проработки. В документе читаются пицца и паста, третья позиция неясна; включение в меню не утверждено. Для новинки указана скидка без размера и условий. Февраль, май, август и ноябрь — предварительный график." aria-label="Выбираем вместе и новинки сезона">
+                    <span class="promo-thumb"><img src="img/offers/new.svg" alt="" width="96" height="96"><span class="offer-label">Новинки<br>сезона</span></span>
+                </button>
+                <button class="promo-petal promo-petal-11" type="button" data-title="Понедельник не приговор" data-description="Планируется раз в месяц, ориентировочно в первый понедельник, с анонсом в VK вечером в воскресенье. В записи упомянута фиолетовая куртка либо другой предмет того же цвета, но точный критерий неоднозначен. Размер скидки, позиции и число заказов требуют уточнения." aria-label="Понедельник не приговор">
+                    <span class="promo-thumb"><img src="img/offers/monday.svg" alt="" width="96" height="96"><span class="offer-label">Акция<br>в пн</span></span>
+                </button>
+                <button class="promo-center" type="button" data-title="Розыгрыш по чекам" data-description="Планируется ежемесячный розыгрыш: 1 000 чеков, один победитель, приз — Яндекс Музыка. Неясно, 1 000 чеков — порог или ориентир. Регистрация через бот, способ выбора победителя и срок подписки не определены." aria-label="Розыгрыш по чекам">
+                    <span class="promo-thumb"><img src="img/offers/raffle.svg" alt="" width="96" height="96"><span class="offer-label">Розыгрыш<br>по чекам</span></span>
+                </button>
+            </div>
+            <details class="promotion-details" id="promotion-details" hidden>
+                <summary>Все акции списком</summary>
+                <div class="promotion-list" id="promotion-list"></div>
+            </details>
+            <p class="sidebar-note">В документе также предусмотрены скидка на воду при заказе основного блюда и специальная цена на сезонные напитки — тыквенный кофе и мохито. Размер скидки, специальные цены и сроки не указаны.</p>
+
+        </section>
+    </aside>
+
+    <main class="main">
+    <section class="menu-section" id="menu" aria-label="Меню">
+        <div class="menu-heading">
+            <p class="section-eyebrow">Шаурма ДГТУ и Точка</p>
+            <h2>Ваше любимое меню!</h2>
+            <p>Шаурма, хрустящие закуски и напитки — соберите свой обед.</p>
+        </div>
+
+        <div class="menu-categories" id="menu-categories"></div>
+        <noscript><p>Включите JavaScript, чтобы посмотреть меню. Оформление заказа также требует JavaScript.</p></noscript>
+
+        <div class="menu-finish">
+            <img src="img/offers/combo.svg" alt="" width="96" height="96">
+            <div>
+                <h3>Нашли свою любимую?</h3>
+                <p>Перейдите к заказу, выберите блюда и соберите свой обед в корзине.</p>
+                <a class="menu-order-link" href="Order/order.html">Собрать заказ <span aria-hidden="true">→</span></a>
+            </div>
+        </div>
+        <p class="menu-footnote">Внешний вид блюд может немного отличаться от изображений в меню.</p>
+    </section>
+</main>
+</div>
+
+<article class="item-popover" id="item-popover" aria-live="polite" aria-hidden="true">
+    <div class="item-popover-photo" id="item-popover-photo"></div>
+    <div class="item-popover-copy">
+        <h3 id="item-popover-title"></h3>
+        <p id="item-popover-description"></p>
+    </div>
+</article>
+
+<div class="register-modal" id="register-modal">
+    <div class="register-window">
+        <button class="register-close" id="register-close" type="button">x</button>
+        <h2>Регистрация</h2>
+        <p>Введите почту и пароль, чтобы перейти к заказу.</p>
+
+        <form class="register-form" id="register-form" novalidate>
+            <label for="user-email">Почта</label>
+            <input type="email" id="user-email" placeholder="example@mail.ru" required>
+
+            <label for="user-password">Пароль</label>
+            <input type="password" id="user-password" placeholder="Введите пароль" required>
+
+            <span class="register-error" id="register-error"></span>
+            <button type="submit">Перейти к заказу</button>
+        </form>
+    </div>
+</div>
+
+<footer class="footer" id="help">
+    <div class="footer-top">
+        <div class="footer-logo">
+            <img src="img/Icone.png" alt="Логотип">
+        </div>
+
+        <div class="footer-column">
+            <h3>Навигация</h3>
+            <a href="#top">Главная</a>
+            <a href="#menu">Меню</a>
+            <a href="Order/order.html#cart">Мои заказы</a>
+            <a href="#promotions">Акции</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>О нас</h3>
+            <p>Шаурма ДГТУ и Точка</p>
+            <p>Готовим быстро, вкусно и без лишних очередей.</p>
+        </div>
+
+        <div class="footer-column">
+            <h3>Помощь</h3>
+            <a href="#menu">Как заказать</a>
+            <a href="Order/order.html#cart">Получение заказа</a>
+            <a href="#help">Остались вопросы по заказу</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Телефоны</h3>
+            <a href="tel:+79667666357">+7-966-766-63-57 - Менеджер</a>
+            <a href="tel:+79525852783">+7-952-585-27-83 - Креативный директор</a>
+            <a href="tel:+79996322335">+7-999-632-23-35 - Директор</a>
+            <a href="tel:+79081979609">+7-908-197-96-09 - Владелец</a>
+
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026</p>
+        <p>Внешний вид готовых блюд может немного отличаться от представленных в меню изображений*</p>
+    </div>
+</footer>
+
+<script src="menu-data.js?v=20261029-4"></script>
+<script src="menu-carousel.js?v=20261029-6"></script>
+<script src="Shaurma.js?v=20261029-6"></script>
+</body>
+</html>
